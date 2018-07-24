@@ -18,8 +18,8 @@
 
 set -e
 
-DEVICE=markw
-VENDOR=xiaomi
+DEVICE=taco
+VENDOR=cmdc
 
 INITIAL_COPYRIGHT_YEAR=2017
 

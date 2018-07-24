@@ -1,5 +1,5 @@
 #
-# system.prop for markw
+# system.prop for taco
 #
 
 # Art
@@ -84,6 +84,9 @@ ro.sf.lcd_density=440
 
 # DRM
 drm.service.enabled=true
+
+# Fast charing
+persist.usb.hvdcp.detect=true
 
 # Fingerprint
 persist.qfp=false
@@ -182,6 +185,9 @@ persist.data.qmi.adb_logmask=0
 #3=cache off certain times
 #4=cache off always
 persist.sys.scrollingcache=2
+
+# Security patch level
+ro.vendor.build.security_patch=2016-09-01
 
 # Service Restart
 ro.am.reschedule_service=true

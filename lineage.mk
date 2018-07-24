@@ -14,18 +14,18 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/xiaomi/markw/full_markw.mk)
+$(call inherit-product, device/cmdc/taco/full_taco.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_markw
+PRODUCT_NAME := lineage_taco
 BOARD_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=markw \
+    PRODUCT_NAME=taco \
     PRIVATE_BUILD_DESC="markw-user 6.0.1 MMB29M V9.2.3.0.MBEMIEK release-keys"
 
 BUILD_FINGERPRINT := Xiaomi/markw/markw:6.0.1/MMB29M/V9.2.3.0.MBEMIEK:user/release-keys

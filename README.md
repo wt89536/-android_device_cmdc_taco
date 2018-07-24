@@ -23,4 +23,4 @@ Copyright 2017 - LineageOS
 
 ## Device Picture
 
-![Xiaomi Redmi 4 Prime](http://cdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-4-prime-2.jpg "Xiaomi Redmi 4 Prime")
+![Xiaomi Redmi 4 Prime](http://cdn2.gsmarena.com/vv/pics/cmdc/cmdc-redmi-4-prime-2.jpg "Xiaomi Redmi 4 Prime")
