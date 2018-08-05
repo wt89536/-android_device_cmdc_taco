@@ -16,7 +16,7 @@ ro.vendor.audio.sdk.ssr=false
 ro.vendor.audio.sdk.fluencetype=fluence
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=true
-persist.vendor.audio.fluence.speaker=true
+persist.vendor.audio.fluence.speaker=false
 vendor.audio.tunnel.encode=false
 audio.deep_buffer.media=true
 vendor.audio.playback.mch.downsample=true
@@ -47,6 +47,9 @@ qcom.bluetooth.soc=smd
 persist.vendor.bt.enable.splita2dp=false
 ro.bluetooth.hfp.ver=1.7
 ro.qualcomm.bt.hci_transport=smd
+persist.bt.enableAptXHD=true
+persist.service.btui.use_aptx=1
+persistent.bt.a2dp_offload_cap=sbc-aptx-aptXHD
 
 # Camera
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk
@@ -197,6 +200,7 @@ net.tcp.2g_init_rwnd=10
 
 # Time
 persist.timed.enable=true
+persist.delta_time.enable=true
 
 # Trim properties
 ro.vendor.qti.sys.fw.use_trim_settings=true
