@@ -16,7 +16,7 @@ ro.vendor.audio.sdk.ssr=false
 ro.vendor.audio.sdk.fluencetype=fluence
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=true
-persist.vendor.audio.fluence.speaker=false
+persist.vendor.audio.fluence.speaker=true
 vendor.audio.tunnel.encode=false
 audio.deep_buffer.media=true
 vendor.audio.playback.mch.downsample=true
@@ -26,7 +26,7 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.audio.safx.pbe.enabled=true
 vendor.audio.pp.asphere.enabled=false
 vendor.audio.dolby.ds2.enabled=true
-af.fast_track_multiplier=2
+af.fast_track_multiplier=1
 persist.vendor.audio.speaker.prot.enable=false
 vendor.audio.dolby.ds2.hardbypass=true
 vendor.audio.flac.sw.decoder.24bit=true
@@ -178,6 +178,7 @@ ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.gt_library=libqti-gt.so
 ro.vendor.at_library=libqti-at.so
 ro.am.reschedule_service=true
+ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # QMI
 persist.data.qmi.adb_logmask=0
