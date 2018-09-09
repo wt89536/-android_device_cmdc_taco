@@ -895,9 +895,13 @@ case "$target" in
                 # Keeping Low power modes disabled
                 echo 1 > /sys/module/lpm_levels/parameters/sleep_disabled
 
-                # HMP scheduler (big.Little cluster related) settings
-                echo 93 > /proc/sys/kernel/sched_upmigrate
-                echo 83 > /proc/sys/kernel/sched_downmigrate
+                # Set GPU default power level to 6 (133MHz)
+                echo 6 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
+
+                # SMP scheduler
+                echo 100 > /proc/sys/kernel/sched_upmigrate
+                echo 100 > /proc/sys/kernel/sched_downmigrate
+                echo 19 > /proc/sys/kernel/sched_upmigrate_min_nice
 
                 # Enable sched guided freq control
                 echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load

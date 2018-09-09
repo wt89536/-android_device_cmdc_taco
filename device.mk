@@ -204,7 +204,6 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl-qti \
-    android.hardware.gnss@1.0-service-qti \
     libcurl \
     libgnss \
     libgnsspps
@@ -366,7 +365,20 @@ PRODUCT_PACKAGES += \
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
-    textclassifier.smartselection.bundle1
+    textclassifier.smartselection.bundle1 \
+    textclassifier.smartselection.ar.model \
+    textclassifier.smartselection.de.model \
+    textclassifier.smartselection.en.model \
+    textclassifier.smartselection.es.model \
+    textclassifier.smartselection.fr.model \
+    textclassifier.smartselection.it.model \
+    textclassifier.smartselection.nl.model \
+    textclassifier.smartselection.pl.model \
+    textclassifier.smartselection.pt.model \
+    textclassifier.smartselection.ru.model \
+    textclassifier.smartselection.tr.model \
+    textclassifier.smartselection.zh.model \
+    textclassifier.smartselection.zh-Hant.model
 
 # Thermal
 PRODUCT_COPY_FILES += \
