@@ -14,6 +14,7 @@ allow hal_fingerprint_taco tee_device:chr_file rw_file_perms;
 allow hal_fingerprint_taco uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_taco fpc_data_file:dir rw_dir_perms;
 allow hal_fingerprint_taco fpc_data_file:sock_file create_file_perms;
+allow hal_fingerprint_taco storage_file:dir search;
 allow hal_fingerprint_taco servicemanager:binder { transfer call };
 
 set_prop(hal_fingerprint_taco, system_prop)

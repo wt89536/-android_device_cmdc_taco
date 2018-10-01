@@ -18,8 +18,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    bionic/bionic_time_conversions.cpp \
-    bionic/pthread_cond.cpp
+    bionic/pthread_cond_timedwait.cpp
 
 LOCAL_SHARED_LIBRARIES := libc
 
@@ -29,6 +28,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_32_BIT_ONLY := true
 LOCAL_VENDOR_MODULE := true
 LOCAL_CXX_STL := none
+LOCAL_CFLAGS := -O0
 LOCAL_SANITIZE := never
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
