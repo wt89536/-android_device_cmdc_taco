@@ -90,7 +90,7 @@ else
     if [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 2097152 ]; then
         echo 10 > /sys/module/process_reclaim/parameters/pressure_min
         echo 1024 > /sys/module/process_reclaim/parameters/per_swap_size
-        echo "18432,23040,27648,32256,55296,80640" > /sys/module/lowmemorykiller/parameters/minfree
+        echo "21687,28916,36145,43374,50603,65061" > /sys/module/lowmemorykiller/parameters/minfree
         echo 81250 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
     elif [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 1048576 ]; then
         echo 10 > /sys/module/process_reclaim/parameters/pressure_min
@@ -851,18 +851,16 @@ case "$target" in
                 echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/sampling_down_factor
                 echo 960000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
-                # enable governor for power cluster
-                echo 1 > /sys/devices/system/cpu/cpu4/online
-                echo "interactive" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
-                echo 39000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
-                echo 90 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
-                echo 20000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
-                echo 800000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
-                echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
-                echo "1 800000:90" > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
-                echo 40000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time
-                echo 40000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/sampling_down_factor
-                echo 800000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+                # Virtual memory tweaks
+                echo 10 > /proc/sys/vm/swappiness
+                echo 30 > /proc/sys/vm/dirty_ratio
+                echo 10 > /proc/sys/vm/dirty_background_ratio
+
+
+                # Don't put new tasks on the core which is 70% loaded
+                echo 70 > /proc/sys/kernel/sched_spill_load
+                # Migrate tasks to powerful cores when the load is above 70%
+                echo 80 > /proc/sys/kernel/sched_upmigrate
 
                 # re-enable thermal & BCL core_control now
                 echo 1 > /sys/module/msm_thermal/core_control/enabled
@@ -925,6 +923,7 @@ case "$target" in
 
                 # Set Memory parameters
                 configure_memory_parameters
+<<<<<<< HEAD
 
             ;;
             *)
@@ -967,6 +966,20 @@ case "$target" in
                 echo 3 > /sys/devices/system/cpu/cpu5/sched_mostly_idle_nr_run
                 echo 3 > /sys/devices/system/cpu/cpu6/sched_mostly_idle_nr_run
                 echo 3 > /sys/devices/system/cpu/cpu7/sched_mostly_idle_nr_run
+=======
+        ;;
+        esac
+        ;;
+esac
+
+# Post-setup services
+case "$target" in
+    "msm8937" | "msm8953")
+        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
+        echo 512 > /sys/block/mmcblk0/queue/read_ahead_kb
+        setprop sys.post_boot.parsed 1
+    ;;
+>>>>>>> markw/lineage-15.1
 
                 for devfreq_gov in /sys/class/devfreq/*qcom,mincpubw*/governor
                 do

@@ -83,6 +83,8 @@ persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1
 debug.gralloc.enable_fb_ubwc=1
 ro.opengles.version=196610
+debug.sdm.support_writeback=0
+sdm.debug.rotator_downscale=1
 ro.sf.lcd_density=440
 
 # DRM
@@ -202,6 +204,10 @@ net.tcp.2g_init_rwnd=10
 # Time
 persist.timed.enable=true
 persist.delta_time.enable=true
+
+# Touch optimize
+persist.vendor.qti.inputopts.enable=true
+persist.vendor.qti.inputopts.movetouchslop=0.6
 
 # Trim properties
 ro.vendor.qti.sys.fw.use_trim_settings=true
